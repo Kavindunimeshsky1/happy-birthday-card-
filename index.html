@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Happy Birthday, My Love ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+>
+
 
 <style>
 
-/* =====================================================
+/* =========================================================
    ROOT
-===================================================== */
+========================================================= */
 
 :root {
+
     --black: #050305;
-    --deep: #0d0509;
-    --wine: #2a0715;
-    --burgundy: #4a0d25;
+    --deep: #0b0308;
+
+    --wine: #240611;
+    --burgundy: #450b22;
+
     --rose: #b83b68;
     --pink: #e889a8;
+
     --soft-pink: #f7c6d7;
+
     --gold: #d8ad68;
+
     --cream: #fff4f7;
     --white: #ffffff;
-    --muted: #c8aeb7;
+
+    --muted: #c9aeb8;
+
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -37,85 +59,112 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
+
+    margin: 0;
+
     background: #050305;
+
     color: var(--cream);
+
     font-family: "Poppins", sans-serif;
+
     overflow-x: hidden;
+
 }
+
 
 body.no-scroll {
     overflow: hidden;
 }
 
 
-/* =====================================================
+/* =========================================================
    COUPLE PHOTO BACKGROUND
-===================================================== */
+========================================================= */
 
 body::before {
+
     content: "";
 
     position: fixed;
+
     inset: 0;
 
     background:
+
         linear-gradient(
             rgba(5, 3, 5, 0.70),
-            rgba(5, 3, 5, 0.82)
+            rgba(5, 3, 5, 0.84)
         ),
-        url("couple.jpg") center center / cover no-repeat;
+
+        url("couple.jpg")
+        center center /
+        cover
+        no-repeat;
 
     opacity: 0.55;
 
     filter:
-        blur(1.5px)
-        saturate(0.88);
+        blur(1.2px)
+        saturate(0.90);
 
     transform: scale(1.035);
 
     z-index: 0;
 
     pointer-events: none;
+
 }
 
 
-/* Soft cinematic romantic overlay */
+/* =========================================================
+   CINEMATIC COLOR OVERLAY
+========================================================= */
 
 body::after {
+
     content: "";
 
     position: fixed;
+
     inset: 0;
 
     background:
+
         radial-gradient(
             circle at 50% 25%,
-            rgba(130, 15, 58, 0.16),
-            transparent 48%
+            rgba(145, 15, 65, 0.18),
+            transparent 50%
         ),
+
         linear-gradient(
             180deg,
-            rgba(5, 3, 5, 0.04),
-            rgba(5, 3, 5, 0.22)
+            rgba(5,3,5,0.05),
+            rgba(5,3,5,0.25)
         );
 
     z-index: 0;
 
     pointer-events: none;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    STARS
-===================================================== */
+========================================================= */
 
 .stars {
+
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
@@ -123,43 +172,58 @@ body::after {
     z-index: 1;
 
     overflow: hidden;
+
 }
 
+
 .star {
+
     position: absolute;
 
     width: 2px;
-    height: 2px;
 
-    background: rgba(255,255,255,0.75);
+    height: 2px;
 
     border-radius: 50%;
 
+    background: rgba(255,255,255,0.75);
+
     animation:
         twinkle 3s infinite ease-in-out;
+
 }
+
 
 @keyframes twinkle {
 
-    0%,100% {
-        opacity: 0.2;
+    0%,
+    100% {
+
+        opacity: 0.15;
+
         transform: scale(0.7);
+
     }
 
     50% {
+
         opacity: 1;
+
         transform: scale(1.4);
+
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    INTRO CARD SCREEN
-===================================================== */
+========================================================= */
 
 .card-screen {
+
     position: fixed;
+
     inset: 0;
 
     z-index: 9999;
@@ -167,14 +231,19 @@ body::after {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
+    padding: 20px;
+
     background:
+
         radial-gradient(
             circle at center,
             rgba(100, 8, 40, 0.35),
-            transparent 45%
+            transparent 48%
         ),
+
         linear-gradient(
             135deg,
             #030203,
@@ -185,247 +254,394 @@ body::after {
     perspective: 1800px;
 
     transition:
+
         opacity 1s ease,
+
         visibility 1s ease;
+
 }
 
+
 .card-screen.hidden {
+
     opacity: 0;
 
     visibility: hidden;
 
     pointer-events: none;
+
 }
 
 
-/* =====================================================
-   CARD
-===================================================== */
+/* =========================================================
+   CARD STAGE
+========================================================= */
 
 .card-stage {
-    width: min(380px, 88vw);
 
-    height: min(540px, 78vh);
+    width: min(370px, 82vw);
+
+    height: min(550px, 76vh);
 
     position: relative;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
+
 }
 
+
+/* =========================================================
+   BIRTHDAY CARD
+========================================================= */
+
 .birthday-card {
+
     width: 100%;
+
     height: 100%;
 
     position: relative;
 
     transform-style: preserve-3d;
 
-    transition:
-        transform 2.2s cubic-bezier(.77,0,.18,1);
-
     transform-origin: left center;
 
-    border-radius: 8px;
+    transition:
+
+        transform 2.2s
+        cubic-bezier(.77,0,.18,1);
+
+    border-radius: 9px;
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,0.65),
-        0 0 80px rgba(184,59,104,0.12);
+
+        0 30px 80px
+        rgba(0,0,0,0.70),
+
+        0 0 80px
+        rgba(184,59,104,0.12);
+
 }
 
+
 .birthday-card.opened {
+
     transform: rotateY(-145deg);
+
 }
+
+
+/* =========================================================
+   CARD FRONT + INSIDE
+========================================================= */
 
 .card-front,
 .card-inside {
+
     position: absolute;
 
     inset: 0;
 
-    border-radius: 8px;
+    border-radius: 9px;
+
+    overflow: hidden;
 
     backface-visibility: hidden;
 
     -webkit-backface-visibility: hidden;
 
-    overflow: hidden;
 }
 
 
-/* =====================================================
+/* =========================================================
    CARD FRONT
-===================================================== */
+========================================================= */
 
 .card-front {
+
     background:
+
         radial-gradient(
             circle at 50% 35%,
             rgba(184,59,104,0.30),
-            transparent 30%
+            transparent 35%
         ),
+
         linear-gradient(
             145deg,
             #190611,
-            #070307 70%
+            #070307 75%
         );
 
     border:
-        1px solid rgba(216,173,104,0.35);
+
+        1px solid
+        rgba(216,173,104,0.38);
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    padding: 35px;
+    padding: 30px 22px;
 
     text-align: center;
+
 }
 
+
 .card-front::before {
+
     content: "";
 
     position: absolute;
 
-    inset: 15px;
+    inset: 14px;
 
     border:
-        1px solid rgba(216,173,104,0.28);
+
+        1px solid
+        rgba(216,173,104,0.28);
 
     pointer-events: none;
+
 }
 
+
 .card-front::after {
+
     content: "♥";
 
     position: absolute;
 
     top: 25px;
-    right: 28px;
+
+    right: 27px;
 
     color:
-        rgba(216,173,104,0.7);
+        rgba(216,173,104,0.75);
 
     font-size: 18px;
+
 }
+
+
+/* =========================================================
+   FRONT CONTENT
+========================================================= */
 
 .front-content {
+
     position: relative;
 
-    z-index: 2;
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
 }
 
+
 .front-small {
-    font-family: "Poppins", sans-serif;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 
     color: var(--gold);
 
     text-transform: uppercase;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
+
 }
 
+
 .front-title {
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-size:
-        clamp(42px, 10vw, 65px);
+        clamp(45px, 11vw, 65px);
 
-    line-height: 0.95;
+    line-height: 0.92;
 
     color: var(--cream);
 
-    font-weight: 500;
+    font-weight: 600;
+
 }
+
 
 .front-title span {
+
     color: var(--pink);
+
 }
 
+
 .front-date {
-    margin-top: 25px;
 
-    font-family: "Playfair Display", serif;
+    margin-top: 23px;
 
-    font-size: 18px;
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 16px;
 
     letter-spacing: 7px;
 
     color: var(--gold);
+
 }
 
-.front-open {
-    margin-top: 55px;
 
-    font-size: 12px;
+.front-open {
+
+    margin-top: 34px;
+
+    font-size: 10px;
 
     letter-spacing: 3px;
 
     color: var(--muted);
 
     text-transform: uppercase;
+
 }
 
-.open-card-btn {
-    margin-top: 16px;
 
-    padding: 14px 24px;
+/* =========================================================
+   OPEN BUTTON - FIXED FOR MOBILE
+========================================================= */
+
+.open-card-btn {
+
+    display: block;
+
+    position: relative;
+
+    z-index: 30;
+
+    pointer-events: auto;
+
+    width: min(245px, 100%);
+
+    max-width: 245px;
+
+    min-height: 48px;
+
+    margin: 15px auto 0;
+
+    padding: 12px 17px;
 
     border:
-        1px solid rgba(216,173,104,0.55);
+
+        1px solid
+        rgba(216,173,104,0.58);
 
     border-radius: 999px;
 
     background:
-        rgba(255,255,255,0.03);
+
+        rgba(255,255,255,0.055);
 
     color: var(--cream);
 
-    font-family: "Poppins", sans-serif;
+    font-family:
+        "Poppins",
+        sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    text-align: center;
+
+    white-space: normal;
+
+    word-break: normal;
 
     cursor: pointer;
 
-    transition: 0.35s ease;
+    -webkit-tap-highlight-color: transparent;
 
-    box-shadow:
-        0 0 0 rgba(232,137,168,0);
+    touch-action: manipulation;
+
+    transition:
+
+        transform 0.3s ease,
+
+        background 0.3s ease,
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
+
 }
+
 
 .open-card-btn:hover {
+
     background:
-        rgba(184,59,104,0.16);
+        rgba(184,59,104,0.18);
 
-    border-color: var(--pink);
+    border-color:
+        var(--pink);
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-2px);
 
     box-shadow:
-        0 10px 30px rgba(184,59,104,0.18);
+        0 10px 30px
+        rgba(184,59,104,0.18);
+
 }
 
 
-/* =====================================================
+.open-card-btn:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+/* =========================================================
    CARD INSIDE
-===================================================== */
+========================================================= */
 
 .card-inside {
+
     transform: rotateY(180deg);
 
     background:
+
         radial-gradient(
             circle at 50% 30%,
             rgba(232,137,168,0.15),
             transparent 35%
         ),
+
         linear-gradient(
             145deg,
             #18050e,
@@ -433,53 +649,77 @@ body::after {
         );
 
     border:
-        1px solid rgba(216,173,104,0.35);
+
+        1px solid
+        rgba(216,173,104,0.35);
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
-    padding: 30px;
+    padding: 25px;
+
 }
 
+
 .inside-content {
+
     position: relative;
 
     z-index: 2;
+
 }
 
+
 .inside-to {
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-size: 24px;
 
     color: var(--soft-pink);
 
     margin-bottom: 18px;
+
 }
 
-.inside-title {
-    font-family: "Playfair Display", serif;
 
-    font-size: 32px;
+.inside-title {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 31px;
 
     color: var(--cream);
 
     margin-bottom: 12px;
+
 }
+
 
 .inside-princess {
-    font-family: "Cormorant Garamond", serif;
 
-    font-size: 30px;
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 29px;
 
     color: var(--gold);
+
 }
 
+
 .inside-date {
+
     margin-top: 22px;
 
     color: var(--pink);
@@ -487,17 +727,20 @@ body::after {
     letter-spacing: 7px;
 
     font-size: 14px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    HEART EXPLOSION
-===================================================== */
+========================================================= */
 
 .explosion-heart {
+
     position: fixed;
 
     left: 50%;
+
     top: 50%;
 
     z-index: 10000;
@@ -508,38 +751,48 @@ body::after {
 
     animation:
         heartFly 1.7s ease-out forwards;
+
 }
+
 
 @keyframes heartFly {
 
     0% {
+
         opacity: 1;
 
         transform:
-            translate(-50%, -50%)
+            translate(-50%,-50%)
             scale(0.3);
+
     }
 
     100% {
+
         opacity: 0;
 
         transform:
+
             translate(
                 calc(-50% + var(--x)),
                 calc(-50% + var(--y))
             )
+
             scale(1.3)
+
             rotate(var(--r));
+
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    MAIN SITE
-===================================================== */
+========================================================= */
 
 .main-site {
+
     position: relative;
 
     z-index: 2;
@@ -550,30 +803,39 @@ body::after {
 
     transition:
         opacity 1.3s ease;
+
 }
 
+
 .main-site.visible {
+
     opacity: 1;
 
     visibility: visible;
+
 }
 
 
-/* =====================================================
-   GENERAL
-===================================================== */
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
 
 section {
+
     position: relative;
 
-    width: min(1050px, 92%);
+    width:
+        min(1050px, 92%);
 
     margin: auto;
 
     padding: 110px 0;
+
 }
 
+
 .section-label {
+
     font-size: 10px;
 
     text-transform: uppercase;
@@ -585,10 +847,15 @@ section {
     margin-bottom: 20px;
 
     text-align: center;
+
 }
 
+
 .section-title {
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(42px, 7vw, 70px);
@@ -600,18 +867,23 @@ section {
     font-weight: 500;
 
     color: var(--cream);
+
 }
+
 
 .section-title span {
+
     color: var(--pink);
+
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero {
+
     min-height: 100vh;
 
     display: flex;
@@ -623,30 +895,41 @@ section {
     text-align: center;
 
     padding-top: 70px;
+
 }
 
+
 .hero-content {
+
     max-width: 900px;
 
     position: relative;
 
     z-index: 2;
+
 }
 
+
 .hero-small {
+
     font-size: 12px;
 
     text-transform: uppercase;
 
-    letter-spacing: 7px;
+    letter-spacing: 6px;
 
     color: var(--gold);
 
     margin-bottom: 25px;
+
 }
 
+
 .hero h1 {
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
 
     font-weight: 500;
 
@@ -660,26 +943,37 @@ section {
     color: var(--cream);
 
     text-shadow:
-        0 4px 25px rgba(0,0,0,0.5);
+        0 4px 25px rgba(0,0,0,0.6);
+
 }
+
 
 .hero h1 span {
+
     color: var(--pink);
+
 }
 
+
 .hero-date {
+
     margin-top: 35px;
 
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
 
     font-size: 22px;
 
     letter-spacing: 10px;
 
     color: var(--gold);
+
 }
 
+
 .hero-sub {
+
     max-width: 620px;
 
     margin: 35px auto 0;
@@ -691,9 +985,12 @@ section {
     line-height: 2;
 
     font-weight: 300;
+
 }
 
+
 .scroll-hint {
+
     margin-top: 60px;
 
     color:
@@ -704,33 +1001,43 @@ section {
     letter-spacing: 4px;
 
     text-transform: uppercase;
+
 }
 
+
 .scroll-line {
+
     width: 1px;
 
     height: 55px;
 
     background:
+
         linear-gradient(
             to bottom,
             var(--pink),
             transparent
         );
 
-    margin: 12px auto 0;
+    margin:
+        12px auto 0;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    LOVE LETTER
-===================================================== */
+========================================================= */
 
 .letter-section {
+
     padding-top: 80px;
+
 }
 
+
 .letter-box {
+
     position: relative;
 
     max-width: 820px;
@@ -741,28 +1048,34 @@ section {
         clamp(35px, 6vw, 70px);
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(10,3,7,0.76),
-            rgba(10,3,7,0.55)
+            rgba(10,3,7,0.78),
+            rgba(10,3,7,0.57)
         );
 
     backdrop-filter:
-        blur(7px);
+        blur(8px);
 
     -webkit-backdrop-filter:
-        blur(7px);
+        blur(8px);
 
     border:
-        1px solid rgba(216,173,104,0.20);
+        1px solid
+        rgba(216,173,104,0.20);
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,0.40);
+        0 30px 100px
+        rgba(0,0,0,0.42);
 
     border-radius: 5px;
+
 }
 
+
 .letter-box::before {
+
     content: "“";
 
     position: absolute;
@@ -772,17 +1085,22 @@ section {
     left: 25px;
 
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size: 110px;
 
     color:
         rgba(216,173,104,0.20);
+
 }
 
+
 .letter-text {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(21px, 3vw, 27px);
@@ -792,46 +1110,59 @@ section {
     color: #f9e9ee;
 
     font-weight: 400;
+
 }
 
+
 .letter-text .opening {
+
     color: var(--gold);
 
     font-size: 32px;
 
     margin-bottom: 20px;
+
 }
 
+
 .letter-text .english {
+
     font-family:
-        "Playfair Display", serif;
+        "Playfair Display",
+        serif;
 
     font-style: italic;
 
     color: var(--pink);
 
     margin-top: 25px;
+
 }
 
+
 .letter-signature {
-    margin-top: 30px;
+
+    margin-top: 32px;
 
     text-align: right;
 
     color: var(--gold);
 
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size: 24px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    REASONS
-===================================================== */
+========================================================= */
 
 .reasons-grid {
+
     display: grid;
 
     grid-template-columns:
@@ -840,28 +1171,33 @@ section {
     gap: 18px;
 
     margin-top: 60px;
+
 }
 
+
 .reason-card {
+
     min-height: 220px;
 
     padding: 30px;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(10,3,7,0.72),
-            rgba(10,3,7,0.50)
+            rgba(10,3,7,0.76),
+            rgba(10,3,7,0.52)
         );
 
     backdrop-filter:
-        blur(6px);
+        blur(7px);
 
     -webkit-backdrop-filter:
-        blur(6px);
+        blur(7px);
 
     border:
-        1px solid rgba(255,255,255,0.07);
+        1px solid
+        rgba(255,255,255,0.07);
 
     border-radius: 8px;
 
@@ -872,58 +1208,76 @@ section {
     flex-direction: column;
 
     justify-content: center;
+
 }
 
+
 .reason-card:hover {
-    transform: translateY(-8px);
+
+    transform:
+        translateY(-8px);
 
     border-color:
         rgba(232,137,168,0.35);
 
     background:
+
         linear-gradient(
             145deg,
             rgba(184,59,104,0.18),
-            rgba(10,3,7,0.65)
+            rgba(10,3,7,0.68)
         );
+
 }
 
+
 .reason-number {
+
     font-family:
-        "Playfair Display", serif;
+        "Playfair Display",
+        serif;
 
     color: var(--gold);
 
     font-size: 13px;
 
     margin-bottom: 20px;
+
 }
 
+
 .reason-card h3 {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size: 29px;
 
     color: var(--cream);
 
     margin-bottom: 12px;
+
 }
 
+
 .reason-card p {
+
     color: var(--muted);
 
     line-height: 1.8;
 
     font-size: 13px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    BIG QUOTE
-===================================================== */
+========================================================= */
 
 .quote-section {
+
     width: 100%;
 
     max-width: none;
@@ -932,24 +1286,29 @@ section {
         140px 7%;
 
     background:
+
         linear-gradient(
-            rgba(5,3,5,0.48),
-            rgba(5,3,5,0.58)
+            rgba(5,3,5,0.50),
+            rgba(5,3,5,0.62)
         );
 
     backdrop-filter:
         blur(2px);
 
     text-align: center;
+
 }
 
+
 .big-quote {
+
     max-width: 950px;
 
     margin: auto;
 
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(38px, 7vw, 72px);
@@ -961,45 +1320,60 @@ section {
     color: var(--cream);
 
     text-shadow:
-        0 4px 30px rgba(0,0,0,0.5);
+        0 4px 30px rgba(0,0,0,0.55);
+
 }
+
 
 .big-quote span {
+
     color: var(--pink);
+
 }
 
 
-/* =====================================================
+/* =========================================================
    ONE THING
-===================================================== */
+========================================================= */
 
 .one-thing {
+
     text-align: center;
+
 }
 
+
 .one-thing-box {
+
     max-width: 760px;
 
     margin: 55px auto 0;
 
-    padding: 60px 35px;
+    padding:
+        60px 35px;
 
     background:
-        rgba(5,3,5,0.45);
+        rgba(5,3,5,0.50);
 
     backdrop-filter:
-        blur(6px);
+        blur(7px);
 
     border-top:
-        1px solid rgba(216,173,104,0.25);
+        1px solid
+        rgba(216,173,104,0.25);
 
     border-bottom:
-        1px solid rgba(216,173,104,0.25);
+        1px solid
+        rgba(216,173,104,0.25);
+
 }
 
+
 .one-thing-text {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(30px, 5vw, 50px);
@@ -1007,28 +1381,37 @@ section {
     line-height: 1.3;
 
     color: var(--cream);
+
 }
+
 
 .one-thing-text span {
+
     color: var(--pink);
+
 }
 
 
-/* =====================================================
+/* =========================================================
    FAVORITE PERSON
-===================================================== */
+========================================================= */
 
 .favorite {
+
     text-align: center;
+
 }
 
+
 .favorite-text {
+
     max-width: 720px;
 
     margin: 45px auto 0;
 
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(25px, 4vw, 38px);
@@ -1038,10 +1421,13 @@ section {
     color: var(--soft-pink);
 
     text-shadow:
-        0 3px 20px rgba(0,0,0,0.6);
+        0 3px 20px rgba(0,0,0,0.65);
+
 }
 
+
 .favorite-small {
+
     max-width: 600px;
 
     margin: 25px auto 0;
@@ -1051,28 +1437,37 @@ section {
     line-height: 2;
 
     font-size: 14px;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    BIRTHDAY WISH
-===================================================== */
+========================================================= */
 
 .wish-section {
+
     text-align: center;
 
     padding-bottom: 80px;
+
 }
 
+
 .wish-box {
+
     max-width: 760px;
 
     margin: 55px auto 0;
+
 }
 
+
 .wish-box p {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(25px, 4vw, 40px);
@@ -1083,24 +1478,32 @@ section {
 
     text-shadow:
         0 3px 20px rgba(0,0,0,0.6);
+
 }
+
 
 .wish-box strong {
+
     color: var(--pink);
+
 }
 
 
-/* =====================================================
+/* =========================================================
    LOVE BUTTON
-===================================================== */
+========================================================= */
 
 .love-button-section {
+
     text-align: center;
 
     padding-top: 60px;
+
 }
 
+
 .love-button {
+
     width: 95px;
 
     height: 95px;
@@ -1108,13 +1511,15 @@ section {
     border-radius: 50%;
 
     border:
-        1px solid rgba(216,173,104,0.45);
+        1px solid
+        rgba(216,173,104,0.45);
 
     background:
+
         radial-gradient(
             circle,
             rgba(184,59,104,0.28),
-            rgba(5,3,5,0.70)
+            rgba(5,3,5,0.72)
         );
 
     color: var(--pink);
@@ -1126,23 +1531,34 @@ section {
     transition: 0.4s ease;
 
     box-shadow:
-        0 0 0 rgba(184,59,104,0);
+        0 0 0
+        rgba(184,59,104,0);
+
 }
+
 
 .love-button:hover {
-    transform: scale(1.08);
+
+    transform:
+        scale(1.08);
 
     box-shadow:
-        0 0 50px rgba(184,59,104,0.20);
+
+        0 0 50px
+        rgba(184,59,104,0.20);
+
 }
 
+
 .love-message {
+
     min-height: 45px;
 
     margin-top: 25px;
 
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size: 26px;
 
@@ -1151,35 +1567,45 @@ section {
     opacity: 0;
 
     transition: 0.5s ease;
+
 }
+
 
 .love-message.show {
+
     opacity: 1;
+
 }
 
 
-/* =====================================================
+/* =========================================================
    FINAL SURPRISE
-===================================================== */
+========================================================= */
 
 .final-section {
+
     padding-bottom: 130px;
 
     text-align: center;
+
 }
 
+
 .final-card {
+
     max-width: 800px;
 
     margin: 50px auto 0;
 
-    padding: 65px 35px;
+    padding:
+        65px 35px;
 
     background:
+
         linear-gradient(
             145deg,
-            rgba(50,7,25,0.58),
-            rgba(5,3,5,0.68)
+            rgba(50,7,25,0.60),
+            rgba(5,3,5,0.70)
         );
 
     backdrop-filter:
@@ -1189,15 +1615,20 @@ section {
         blur(8px);
 
     border:
-        1px solid rgba(216,173,104,0.22);
+        1px solid
+        rgba(216,173,104,0.22);
 
     border-radius: 10px;
 
     box-shadow:
-        0 30px 100px rgba(0,0,0,0.40);
+        0 30px 100px
+        rgba(0,0,0,0.42);
+
 }
 
+
 .final-small {
+
     color: var(--gold);
 
     font-size: 10px;
@@ -1207,11 +1638,15 @@ section {
     text-transform: uppercase;
 
     margin-bottom: 20px;
+
 }
 
+
 .final-title {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
         clamp(38px, 6vw, 65px);
@@ -1219,26 +1654,35 @@ section {
     color: var(--cream);
 
     margin-bottom: 30px;
+
 }
 
+
 .final-preview {
+
     color: var(--muted);
 
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size: 25px;
 
     line-height: 1.6;
+
 }
 
+
 .reveal-button {
+
     margin-top: 35px;
 
-    padding: 15px 28px;
+    padding:
+        15px 28px;
 
     border:
-        1px solid rgba(216,173,104,0.5);
+        1px solid
+        rgba(216,173,104,0.50);
 
     background: transparent;
 
@@ -1249,38 +1693,54 @@ section {
     cursor: pointer;
 
     font-family:
-        "Poppins", sans-serif;
+        "Poppins",
+        sans-serif;
 
     font-size: 12px;
 
     letter-spacing: 1px;
 
     transition: 0.35s ease;
+
 }
 
+
 .reveal-button:hover {
+
     background:
         rgba(184,59,104,0.15);
 
-    border-color: var(--pink);
+    border-color:
+        var(--pink);
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px);
+
 }
 
+
 .final-message {
+
     display: none;
 
     animation:
         finalReveal 1s ease forwards;
+
 }
+
 
 .final-message.show {
+
     display: block;
+
 }
 
+
 .final-message h3 {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     color: var(--pink);
 
@@ -1288,50 +1748,62 @@ section {
         clamp(38px, 6vw, 60px);
 
     margin-bottom: 20px;
+
 }
 
+
 .final-message p {
+
     font-family:
-        "Cormorant Garamond", serif;
+        "Cormorant Garamond",
+        serif;
 
     color: var(--cream);
 
     font-size: 25px;
 
     line-height: 1.6;
+
 }
+
 
 @keyframes finalReveal {
 
     from {
+
         opacity: 0;
 
         transform:
             translateY(20px);
+
     }
 
     to {
+
         opacity: 1;
 
         transform:
             translateY(0);
+
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
+
     padding:
         40px 20px 60px;
 
     text-align: center;
 
     border-top:
-        1px solid rgba(255,255,255,0.05);
+        1px solid
+        rgba(255,255,255,0.05);
 
     color:
         rgba(255,255,255,0.30);
@@ -1339,20 +1811,25 @@ footer {
     font-size: 10px;
 
     letter-spacing: 2px;
+
 }
 
+
 .footer-heart {
+
     color: var(--pink);
 
     font-size: 14px;
+
 }
 
 
-/* =====================================================
-   MUSIC PLAYER
-===================================================== */
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
 
 .music-player {
+
     position: fixed;
 
     right: 20px;
@@ -1360,9 +1837,12 @@ footer {
     bottom: 20px;
 
     z-index: 9000;
+
 }
 
+
 .music-button {
+
     width: 48px;
 
     height: 48px;
@@ -1370,10 +1850,11 @@ footer {
     border-radius: 50%;
 
     border:
-        1px solid rgba(216,173,104,0.45);
+        1px solid
+        rgba(216,173,104,0.45);
 
     background:
-        rgba(10,3,7,0.82);
+        rgba(10,3,7,0.84);
 
     backdrop-filter:
         blur(10px);
@@ -1385,208 +1866,523 @@ footer {
     cursor: pointer;
 
     transition: 0.3s ease;
+
 }
+
 
 .music-button:hover {
-    transform: scale(1.08);
 
-    border-color: var(--pink);
+    transform:
+        scale(1.08);
+
+    border-color:
+        var(--pink);
+
 }
 
 
-/* =====================================================
-   REVEAL
-===================================================== */
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
 
 .reveal {
+
     opacity: 0;
 
     transform:
         translateY(35px);
 
     transition:
+
         opacity 1s ease,
+
         transform 1s ease;
+
 }
 
+
 .reveal.active {
+
     opacity: 1;
 
     transform:
         translateY(0);
+
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 800px) {
 
     section {
-        padding: 85px 0;
+
+        padding:
+            85px 0;
+
     }
+
 
     .reasons-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 
     .reason-card {
-        min-height: 190px;
+
+        min-height:
+            190px;
+
     }
+
 
     .hero h1 {
+
         font-size:
-            clamp(62px, 18vw, 100px);
+            clamp(65px, 18vw, 100px);
+
     }
 
+
     .hero-date {
+
         font-size: 17px;
 
         letter-spacing: 7px;
+
     }
+
 
     .letter-box {
-        padding: 35px 25px;
+
+        padding:
+            35px 25px;
+
     }
 
+
     .letter-text {
+
         font-size: 21px;
 
         line-height: 1.7;
+
     }
+
 
     .quote-section {
+
         padding:
             100px 8%;
+
     }
+
 
     .big-quote {
+
         font-size: 40px;
+
     }
 
+
     .final-card {
-        padding: 50px 25px;
+
+        padding:
+            50px 25px;
+
     }
 
 }
 
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 480px) {
 
-    .card-stage {
-        width: 86vw;
 
-        height: 76vh;
+    /* INTRO CARD */
+
+    .card-stage {
+
+        width: 82vw;
+
+        max-width: 330px;
+
+        height: 72vh;
+
+        max-height: 560px;
+
     }
+
+
+    .birthday-card {
+
+        width: 100%;
+
+        height: 100%;
+
+    }
+
+
+    .card-front,
+    .card-inside {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .front-content {
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+
+    .front-small {
+
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 20px;
+
+    }
+
 
     .front-title {
-        font-size: 46px;
+
+        font-size: 43px;
+
+        line-height: 0.92;
+
     }
+
+
+    .front-date {
+
+        font-size: 15px;
+
+        margin-top: 20px;
+
+    }
+
+
+    .front-open {
+
+        margin-top: 31px;
+
+        font-size: 9px;
+
+    }
+
+
+    .open-card-btn {
+
+        width: 100%;
+
+        max-width: 230px;
+
+        min-height: 46px;
+
+        padding:
+            11px 13px;
+
+        font-size: 10.5px;
+
+    }
+
+
+    .inside-to {
+
+        font-size: 22px;
+
+    }
+
 
     .inside-title {
+
         font-size: 27px;
+
     }
+
 
     .inside-princess {
+
         font-size: 26px;
+
     }
+
+
+    /* HERO */
 
     .hero-small {
-        letter-spacing: 5px;
+
+        letter-spacing: 4px;
+
+        font-size: 9px;
+
+        padding:
+            0 15px;
+
     }
+
 
     .hero h1 {
-        font-size: 66px;
+
+        font-size: 67px;
 
         letter-spacing: -2px;
+
     }
+
 
     .hero-sub {
+
         font-size: 13px;
 
-        padding: 0 15px;
+        padding:
+            0 15px;
+
     }
+
 
     .section-title {
+
         font-size: 47px;
+
     }
+
+
+    /* LETTER */
 
     .letter-text {
+
         font-size: 20px;
+
     }
+
 
     .letter-text .opening {
+
         font-size: 29px;
+
     }
+
+
+    .letter-signature {
+
+        font-size: 21px;
+
+    }
+
+
+    /* QUOTE */
 
     .big-quote {
+
         font-size: 37px;
+
     }
+
+
+    /* ONE THING */
 
     .one-thing-text {
+
         font-size: 31px;
+
     }
+
+
+    /* FAVORITE */
 
     .favorite-text {
+
         font-size: 28px;
+
     }
 
+
+    /* WISH */
+
     .wish-box p {
+
         font-size: 28px;
+
+    }
+
+
+    /* FINAL */
+
+    .final-preview {
+
+        font-size: 22px;
+
+    }
+
+
+    .final-message p {
+
+        font-size: 22px;
+
+    }
+
+
+    /* MUSIC */
+
+    .music-player {
+
+        right: 14px;
+
+        bottom: 14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .card-stage {
+
+        width: 84vw;
+
+        height: 70vh;
+
+    }
+
+
+    .front-title {
+
+        font-size: 39px;
+
+    }
+
+
+    .front-small {
+
+        font-size: 8px;
+
+    }
+
+
+    .front-date {
+
+        font-size: 13px;
+
+    }
+
+
+    .front-open {
+
+        margin-top: 25px;
+
+    }
+
+
+    .open-card-btn {
+
+        max-width: 210px;
+
+        font-size: 9.5px;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body class="no-scroll">
 
 
-<!-- =====================================================
+<!-- =========================================================
      STARS
-===================================================== -->
+========================================================= -->
 
-<div class="stars" id="stars"></div>
+<div
+    class="stars"
+    id="stars">
+</div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      3D BIRTHDAY CARD
-===================================================== -->
+========================================================= -->
 
-<div class="card-screen" id="cardScreen">
+<div
+    class="card-screen"
+    id="cardScreen">
+
 
     <div class="card-stage">
 
-        <div class="birthday-card" id="birthdayCard">
+
+        <div
+            class="birthday-card"
+            id="birthdayCard">
 
 
-            <!-- CARD FRONT -->
+            <!-- =============================================
+                 FRONT
+            ============================================== -->
 
             <div class="card-front">
 
+
                 <div class="front-content">
 
+
                     <div class="front-small">
+
                         A Little Surprise
+
                     </div>
+
 
                     <div class="front-title">
-                        FOR<br>
+
+                        FOR
+                        <br>
+
                         MY <span>LOVE</span> ❤️
+
                     </div>
+
 
                     <div class="front-date">
+
                         10 • 08
+
                     </div>
+
 
                     <div class="front-open">
+
                         Open Me...
+
                     </div>
 
+
                     <button
+                        type="button"
                         class="open-card-btn"
                         id="openCard">
 
@@ -1594,47 +2390,69 @@ footer {
 
                     </button>
 
+
                 </div>
+
 
             </div>
 
 
-            <!-- CARD INSIDE -->
+            <!-- =============================================
+                 INSIDE
+            ============================================== -->
 
             <div class="card-inside">
 
+
                 <div class="inside-content">
 
+
                     <div class="inside-to">
+
                         To My Beautiful Girl…
+
                     </div>
+
 
                     <div class="inside-title">
+
                         Happy Birthday ❤️
+
                     </div>
+
 
                     <div class="inside-princess">
+
                         My Princess 👑
+
                     </div>
 
+
                     <div class="inside-date">
+
                         10 • 08
+
                     </div>
+
 
                 </div>
 
+
             </div>
+
 
         </div>
 
+
     </div>
+
 
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MUSIC
-===================================================== -->
+========================================================= -->
 
 <audio
     id="music"
@@ -1648,9 +2466,13 @@ footer {
 </audio>
 
 
-<div class="music-player">
+<!-- MUSIC CONTROL -->
+
+<div
+    class="music-player">
 
     <button
+        type="button"
         class="music-button"
         id="musicButton">
 
@@ -1661,34 +2483,46 @@ footer {
 </div>
 
 
-<!-- =====================================================
+<!-- =========================================================
      MAIN WEBSITE
-===================================================== -->
+========================================================= -->
 
 <main
     class="main-site"
     id="mainSite">
 
 
-    <!-- =================================================
+    <!-- =====================================================
          HERO
-    ================================================== -->
+    ====================================================== -->
 
     <section class="hero">
 
-        <div class="hero-content reveal">
+
+        <div
+            class="hero-content reveal">
+
 
             <div class="hero-small">
+
                 For the girl who means everything to me
+
             </div>
+
 
             <h1>
+
                 My <span>Love</span>
+
             </h1>
 
+
             <div class="hero-date">
+
                 10 • 08
+
             </div>
+
 
             <p class="hero-sub">
 
@@ -1698,49 +2532,71 @@ footer {
 
             </p>
 
+
             <div class="scroll-hint">
+
                 A little message for you
+
             </div>
+
 
             <div class="scroll-line"></div>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          LOVE LETTER
-    ================================================== -->
+    ====================================================== -->
 
-    <section class="letter-section">
+    <section
+        class="letter-section">
+
 
         <div class="reveal">
 
+
             <div class="section-label">
+
                 From My Heart
+
             </div>
 
+
             <h2 class="section-title">
+
                 My <span>Love Letter</span>
+
             </h2>
+
 
         </div>
 
 
-        <div class="letter-box reveal">
+        <div
+            class="letter-box reveal">
+
 
             <div class="letter-text">
 
+
                 <div class="opening">
+
                     My Love,
+
                 </div>
 
 
                 <p>
-                    මයූ මැනික, ඔයා මගේ ජීවිතයට ආවට පස්සේ,
+
+                    මයූ මැනික ඔයා මගේ ජීවිතයට ආවට පස්සේ,
                     ජීවිතේ තිබ්බ සමහර සාමාන්‍ය දවස් පවා
                     special වෙන්න පටන් ගත්තා.
+
                 </p>
 
 
@@ -1748,9 +2604,11 @@ footer {
 
 
                 <p>
+
                     ඔයාගේ හිනාව, ඔයාගේ කතා,
                     ඔයා කරන පොඩි පොඩි දේවල්...
                     ඒ හැමදේම මට වටිනවා.
+
                 </p>
 
 
@@ -1758,10 +2616,12 @@ footer {
 
 
                 <p>
+
                     ඒ වගේම රිදුන තැන් කොච්චර තිබ්බත්
                     මගේ හිතේ ඔයාට තිබ්බ තැන
                     ඔයාට තිබ්බ ආදරේ දශමෙකින්වත් අඩු උනේ නෑ.
                     වෙන්නෙත් නෑ.
+
                 </p>
 
 
@@ -1769,9 +2629,11 @@ footer {
 
 
                 <p>
+
                     මට perfect relationship එකක් ඕනෙ නෑ.
                     මට ඕනෙ අපි දෙන්නා එකට
                     තවත් ලස්සන memories හදාගන්න එක.
+
                 </p>
 
 
@@ -1782,6 +2644,7 @@ footer {
 
                 </p>
 
+
             </div>
 
 
@@ -1789,32 +2652,43 @@ footer {
 
                 Happy Birthday, My Beautiful Girl. ❤️
 
-                <br><br>
+                <br>
+                <br>
 
                 — With all my love ❤️
 
             </div>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          REASONS
-    ================================================== -->
+    ====================================================== -->
 
     <section>
 
+
         <div class="reveal">
 
+
             <div class="section-label">
+
                 A Few Of The Reasons
+
             </div>
 
+
             <h2 class="section-title">
+
                 Why I <span>Love You</span>
+
             </h2>
+
 
         </div>
 
@@ -1833,8 +2707,10 @@ footer {
                 </h3>
 
                 <p>
+
                     ඔයාගේ හිනාවට මගේ mood එක
                     එක මොහොතකින් වෙනස් කරන්න පුළුවන්.
+
                 </p>
 
             </div>
@@ -1851,8 +2727,10 @@ footer {
                 </h3>
 
                 <p>
+
                     ඔයා නොදැනුවත්ව කරන පොඩි පොඩි දේවල් පවා
                     මට ලොකු දෙයක්.
+
                 </p>
 
             </div>
@@ -1869,8 +2747,10 @@ footer {
                 </h3>
 
                 <p>
+
                     ඔයාගේ හිතේ තියෙන ආදරේ,
                     kindness එක සහ warmth එක මට ගොඩක් වටිනවා.
+
                 </p>
 
             </div>
@@ -1887,8 +2767,10 @@ footer {
                 </h3>
 
                 <p>
+
                     සමහර වෙලාවට කිසිම දෙයක් කියන්න
                     ඕනෙ නෑ. ඔයා ඉන්න එකම ඇති.
+
                 </p>
 
             </div>
@@ -1905,8 +2787,10 @@ footer {
                 </h3>
 
                 <p>
+
                     ඔයා වෙන කෙනෙක් වගේ වෙන්න ඕනෙ නෑ.
                     මම ආදරේ කරන්නේ ඔයාට.
+
                 </p>
 
             </div>
@@ -1923,22 +2807,27 @@ footer {
                 </h3>
 
                 <p>
+
                     මේ ලෝකේ කොච්චර මිනිස්සු හිටියත්,
                     මගේ හිතට specialම කෙනා ඔයා.
+
                 </p>
 
             </div>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
-         BIG QUOTE
-    ================================================== -->
+    <!-- =====================================================
+         QUOTE
+    ====================================================== -->
 
     <section class="quote-section">
+
 
         <div class="big-quote reveal">
 
@@ -1951,71 +2840,95 @@ footer {
 
         </div>
 
+
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          ONE THING
-    ================================================== -->
+    ====================================================== -->
 
     <section class="one-thing">
 
+
         <div class="reveal">
 
+
             <div class="section-label">
+
                 If I Could Give You One Thing
+
             </div>
 
+
             <h2 class="section-title">
+
                 One <span>Thing</span>
+
             </h2>
+
 
         </div>
 
 
-        <div class="one-thing-box reveal">
+        <div
+            class="one-thing-box reveal">
+
 
             <div class="one-thing-text">
 
                 If I could give you one thing in life,
 
-                <br><br>
+                <br>
+                <br>
 
                 I would give you the ability to see yourself
                 <span>through my eyes.</span>
 
-                <br><br>
+                <br>
+                <br>
 
                 Then you would finally understand
                 how incredibly special you are to me. ❤️
 
             </div>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          FAVORITE PERSON
-    ================================================== -->
+    ====================================================== -->
 
     <section class="favorite">
 
+
         <div class="reveal">
 
+
             <div class="section-label">
+
                 Something You Should Always Know
+
             </div>
 
+
             <h2 class="section-title">
+
                 My <span>Favorite Person</span>
+
             </h2>
+
 
         </div>
 
 
-        <div class="favorite-text reveal">
+        <div
+            class="favorite-text reveal">
 
             You are not just someone I love.
 
@@ -2029,7 +2942,8 @@ footer {
         </div>
 
 
-        <div class="favorite-small reveal">
+        <div
+            class="favorite-small reveal">
 
             And if life ever gets complicated,
             I hope we always remember why
@@ -2037,42 +2951,54 @@ footer {
 
         </div>
 
+
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          BIRTHDAY WISH
-    ================================================== -->
+    ====================================================== -->
 
     <section class="wish-section">
 
+
         <div class="reveal">
 
+
             <div class="section-label">
+
                 My Birthday Wish For You
+
             </div>
 
+
             <h2 class="section-title">
+
                 For My <span>Beautiful Girl</span>
+
             </h2>
+
 
         </div>
 
 
         <div class="wish-box reveal">
 
+
             <p>
 
                 I hope this new year of your life
                 brings you more happiness,
                 more smiles,
-                more beautiful memories
+                more beautiful memories.
 
-                <br><br>
+                <br>
+                <br>
 
-                and everything your heart deserves.
+                And everything your heart deserves.
 
-                <br><br>
+                <br>
+                <br>
 
                 Most of all...
 
@@ -2084,29 +3010,39 @@ footer {
 
             </p>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          LOVE BUTTON
-    ================================================== -->
+    ====================================================== -->
 
     <section class="love-button-section">
 
+
         <div class="reveal">
 
+
             <div class="section-label">
+
                 One More Little Thing
+
             </div>
 
+
             <h2 class="section-title">
+
                 Press <span>My Heart</span>
+
             </h2>
 
 
             <button
+                type="button"
                 class="love-button"
                 id="loveButton">
 
@@ -2118,44 +3054,61 @@ footer {
             <div
                 class="love-message"
                 id="loveMessage">
+
             </div>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          FINAL SURPRISE
-    ================================================== -->
+    ====================================================== -->
 
     <section class="final-section">
 
+
         <div class="reveal">
 
+
             <div class="section-label">
+
                 One Last Thing...
+
             </div>
 
+
             <h2 class="section-title">
+
                 Before You <span>Go</span>
+
             </h2>
+
 
         </div>
 
 
-        <div class="final-card reveal">
+        <div
+            class="final-card reveal">
 
 
             <div id="finalPreview">
 
+
                 <div class="final-small">
+
                     There's something I want you to remember
+
                 </div>
 
 
                 <div class="final-title">
+
                     My Love ❤️
+
                 </div>
 
 
@@ -2164,7 +3117,8 @@ footer {
                     No matter how many birthdays come,
                     no matter how many years pass...
 
-                    <br><br>
+                    <br>
+                    <br>
 
                     I hope you always know
                     how deeply loved you are.
@@ -2173,12 +3127,14 @@ footer {
 
 
                 <button
+                    type="button"
                     class="reveal-button"
                     id="revealButton">
 
                     One Last Surprise ❤️
 
                 </button>
+
 
             </div>
 
@@ -2187,9 +3143,12 @@ footer {
                 class="final-message"
                 id="finalMessage">
 
+
                 <h3>
+
                     Happy Birthday,
                     My Love. ❤️
+
                 </h3>
 
 
@@ -2197,39 +3156,49 @@ footer {
 
                     මයූ මැනික,
 
-                    <br><br>
+                    <br>
+                    <br>
 
                     ඔයා මගේ ජීවිතයේ
                     ලස්සනම කොටසක්.
 
-                    <br><br>
+                    <br>
+                    <br>
 
                     I love you.
                     Today, tomorrow,
                     and through all the days
                     we haven't lived yet. ❤️
 
-                    <br><br>
+                    <br>
+                    <br>
 
                     — With all my love ❤️
 
                 </p>
 
+
             </div>
 
+
         </div>
+
 
     </section>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          FOOTER
-    ================================================== -->
+    ====================================================== -->
 
     <footer>
 
         Made with
-        <span class="footer-heart">♥</span>
+
+        <span class="footer-heart">
+            ♥
+        </span>
+
         for my favorite person.
 
     </footer>
@@ -2240,9 +3209,9 @@ footer {
 
 <script>
 
-/* =====================================================
+/* =========================================================
    ELEMENTS
-===================================================== */
+========================================================= */
 
 const cardScreen =
     document.getElementById("cardScreen");
@@ -2278,14 +3247,19 @@ const finalMessage =
     document.getElementById("finalMessage");
 
 
-/* =====================================================
-   STARS
-===================================================== */
+/* =========================================================
+   CREATE STARS
+========================================================= */
 
 const starsContainer =
     document.getElementById("stars");
 
-for (let i = 0; i < 100; i++) {
+
+for (
+    let i = 0;
+    i < 100;
+    i++
+) {
 
     const star =
         document.createElement("div");
@@ -2305,39 +3279,67 @@ for (let i = 0; i < 100; i++) {
         (2 + Math.random() * 4) + "s";
 
     starsContainer.appendChild(star);
+
 }
 
 
-/* =====================================================
-   MUSIC
-===================================================== */
+/* =========================================================
+   MUSIC STATE
+========================================================= */
 
 let musicPlaying = false;
 
 
-/* =====================================================
-   OPEN BIRTHDAY CARD
-===================================================== */
+/* =========================================================
+   OPEN CARD
+========================================================= */
 
-openCard.addEventListener(
-    "click",
-    function () {
+function openBirthdayCard(event) {
 
-        /*
-         * Music starts directly from the
-         * user's button click.
-         */
+    if (event) {
 
-        music.volume = 0.45;
+        event.preventDefault();
 
-        music.currentTime = 0;
+        event.stopPropagation();
 
-        music.play()
+    }
+
+
+    /* Prevent double clicks */
+
+    if (
+        birthdayCard.classList.contains("opened")
+    ) {
+
+        return;
+
+    }
+
+
+    /* =============================================
+       PLAY MUSIC FROM USER CLICK
+    ============================================== */
+
+    music.volume = 0.45;
+
+    music.currentTime = 0;
+
+
+    const playPromise =
+        music.play();
+
+
+    if (
+        playPromise !== undefined
+    ) {
+
+        playPromise
             .then(function () {
 
                 musicPlaying = true;
 
-                musicButton.textContent = "❚❚";
+                musicButton.textContent =
+                    "❚❚";
 
             })
             .catch(function (error) {
@@ -2349,54 +3351,90 @@ openCard.addEventListener(
 
             });
 
+    }
 
-        birthdayCard.classList.add(
-            "opened"
+
+    /* =============================================
+       OPEN 3D CARD
+    ============================================== */
+
+    birthdayCard.classList.add(
+        "opened"
+    );
+
+
+    /* =============================================
+       HEART EXPLOSION
+    ============================================== */
+
+    createHeartExplosion();
+
+
+    /* =============================================
+       SHOW WEBSITE
+    ============================================== */
+
+    setTimeout(function () {
+
+        cardScreen.classList.add(
+            "hidden"
         );
 
 
-        createHeartExplosion();
+        document.body.classList.remove(
+            "no-scroll"
+        );
 
 
-        setTimeout(function () {
+        mainSite.classList.add(
+            "visible"
+        );
 
-            cardScreen.classList.add(
-                "hidden"
-            );
 
-            document.body.classList.remove(
-                "no-scroll"
-            );
+        musicButton.style.opacity =
+            "1";
 
-            mainSite.classList.add(
-                "visible"
-            );
 
-            musicButton.style.opacity =
-                "1";
+        window.scrollTo(
+            0,
+            0
+        );
 
-            window.scrollTo({
-                top: 0,
-                behavior: "instant"
-            });
 
-        }, 2200);
+    }, 2200);
 
-    }
+}
+
+
+/* =========================================================
+   CLICK + TOUCH SUPPORT
+========================================================= */
+
+openCard.addEventListener(
+    "click",
+    openBirthdayCard
 );
 
 
-/* =====================================================
+/* =========================================================
    MUSIC BUTTON
-===================================================== */
+========================================================= */
 
 musicButton.style.opacity = "0";
 
+
 musicButton.addEventListener(
     "click",
-    function () {
+    function (event) {
 
-        if (music.paused) {
+        event.preventDefault();
+
+        event.stopPropagation();
+
+
+        if (
+            music.paused
+        ) {
 
             music.play()
                 .then(function () {
@@ -2413,13 +3451,16 @@ musicButton.addEventListener(
 
                 });
 
-        } else {
+        }
+
+        else {
 
             music.pause();
 
             musicPlaying = false;
 
-            musicButton.textContent = "♫";
+            musicButton.textContent =
+                "♫";
 
         }
 
@@ -2427,19 +3468,21 @@ musicButton.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
    HEART EXPLOSION
-===================================================== */
+========================================================= */
 
 function createHeartExplosion() {
 
     const hearts = [
+
         "❤️",
         "💗",
         "💖",
         "💕",
         "✨",
         "♥"
+
     ];
 
 
@@ -2455,6 +3498,7 @@ function createHeartExplosion() {
         heart.className =
             "explosion-heart";
 
+
         heart.textContent =
             hearts[
                 Math.floor(
@@ -2465,13 +3509,18 @@ function createHeartExplosion() {
 
 
         const x =
-            (Math.random() - 0.5) * 700;
+            (Math.random() - 0.5) *
+            700;
+
 
         const y =
-            (Math.random() - 0.5) * 600;
+            (Math.random() - 0.5) *
+            600;
+
 
         const r =
-            (Math.random() - 0.5) * 90;
+            (Math.random() - 0.5) *
+            90;
 
 
         heart.style.setProperty(
@@ -2479,10 +3528,12 @@ function createHeartExplosion() {
             x + "px"
         );
 
+
         heart.style.setProperty(
             "--y",
             y + "px"
         );
+
 
         heart.style.setProperty(
             "--r",
@@ -2495,20 +3546,23 @@ function createHeartExplosion() {
         );
 
 
-        setTimeout(function () {
+        setTimeout(
+            function () {
 
-            heart.remove();
+                heart.remove();
 
-        }, 1800);
+            },
+            1800
+        );
 
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SCROLL REVEAL
-===================================================== */
+========================================================= */
 
 const revealElements =
     document.querySelectorAll(
@@ -2552,9 +3606,9 @@ revealElements.forEach(
 );
 
 
-/* =====================================================
+/* =========================================================
    LOVE BUTTON
-===================================================== */
+========================================================= */
 
 const loveMessages = [
 
@@ -2581,7 +3635,9 @@ loveButton.addEventListener(
     function () {
 
         loveMessage.textContent =
-            loveMessages[loveIndex];
+            loveMessages[
+                loveIndex
+            ];
 
 
         loveMessage.classList.remove(
@@ -2616,9 +3672,9 @@ loveButton.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
    SMALL HEART BURST
-===================================================== */
+========================================================= */
 
 function createSmallHeartBurst() {
 
@@ -2635,10 +3691,13 @@ function createSmallHeartBurst() {
         const heart =
             document.createElement("div");
 
+
         heart.className =
             "explosion-heart";
 
-        heart.textContent = "❤️";
+
+        heart.textContent =
+            "❤️";
 
 
         heart.style.left =
@@ -2696,9 +3755,9 @@ function createSmallHeartBurst() {
 }
 
 
-/* =====================================================
+/* =========================================================
    FINAL SURPRISE
-===================================================== */
+========================================================= */
 
 revealButton.addEventListener(
     "click",
@@ -2707,9 +3766,11 @@ revealButton.addEventListener(
         finalPreview.style.display =
             "none";
 
+
         finalMessage.classList.add(
             "show"
         );
+
 
         createHeartExplosion();
 
@@ -2718,2101 +3779,7 @@ revealButton.addEventListener(
 
 </script>
 
-</body>
-</html>   color:#fff5ee;
-}
-
-.hero h1 span{
-    display:block;
-
-    font-size:.45em;
-
-    line-height:1.3;
-
-    color:var(--pink);
-
-    margin-top:18px;
-}
-
-.hero-date{
-    font-family:'Playfair Display',serif;
-
-    color:var(--gold);
-
-    font-size:18px;
-
-    letter-spacing:8px;
-
-    margin-top:30px;
-}
-
-.hero-sub{
-    max-width:600px;
-
-    margin:30px auto 0;
-
-    color:#cdbbc0;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:23px;
-
-    line-height:1.5;
-}
-
-.scroll-down{
-    position:absolute;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    color:#ad929a;
-
-    font-size:10px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-}
-
-.scroll-down::after{
-    content:"";
-
-    display:block;
-
-    width:1px;
-
-    height:45px;
-
-    background:
-        linear-gradient(
-            var(--gold),
-            transparent
-        );
-
-    margin:10px auto 0;
-}
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-section{
-    padding:120px 20px;
-
-    position:relative;
-}
-
-.container{
-    width:min(1100px,100%);
-
-    margin:auto;
-}
-
-.section-heading{
-    text-align:center;
-
-    margin-bottom:65px;
-}
-
-.section-heading .mini{
-    color:var(--gold);
-
-    font-size:10px;
-
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-
-    margin-bottom:15px;
-}
-
-.section-heading h2{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:
-        clamp(
-            42px,
-            7vw,
-            72px
-        );
-
-    font-weight:500;
-}
-
-.section-heading p{
-    max-width:600px;
-
-    margin:15px auto 0;
-
-    color:var(--muted);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:20px;
-}
-
-
-/* =====================================================
-   LOVE LETTER
-===================================================== */
-
-.letter-wrap{
-    max-width:850px;
-
-    margin:auto;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.01)
-        );
-
-    border:
-        1px solid
-        rgba(232,196,123,.18);
-
-    padding:55px;
-
-    position:relative;
-
-    box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.25);
-}
-
-.letter-wrap::before{
-    content:"“";
-
-    position:absolute;
-
-    top:15px;
-    left:25px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:100px;
-
-    color:
-        rgba(232,196,123,.15);
-}
-
-.letter{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:23px;
-
-    line-height:1.75;
-
-    color:#e5d6d9;
-}
-
-.letter .signature{
-    margin-top:35px;
-
-    color:var(--gold);
-
-    font-size:27px;
-
-    font-style:italic;
-}
-
-
-/* =====================================================
-   REASONS
-===================================================== */
-
-.reasons{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.reason{
-    padding:35px 28px;
-
-    min-height:230px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.01)
-        );
-
-    transition:.4s ease;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.reason:hover{
-    transform:translateY(-8px);
-
-    border-color:
-        rgba(232,196,123,.35);
-}
-
-.reason-number{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:50px;
-
-    color:
-        rgba(232,196,123,.3);
-}
-
-.reason h3{
-    font-family:'Playfair Display',serif;
-
-    font-size:21px;
-
-    margin:10px 0;
-
-    color:#fff0ed;
-}
-
-.reason p{
-    color:#bcaab0;
-
-    line-height:1.7;
-
-    font-size:14px;
-}
-
-
-/* =====================================================
-   BIG QUOTE
-===================================================== */
-
-.big-quote{
-    min-height:70vh;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(100,10,45,.18),
-            transparent 55%
-        );
-}
-
-.big-quote p{
-    max-width:950px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:
-        clamp(
-            38px,
-            6vw,
-            75px
-        );
-
-    line-height:1.15;
-
-    color:#f4e5e4;
-}
-
-.big-quote span{
-    color:var(--gold);
-}
-
-
-/* =====================================================
-   ONE THING
-===================================================== */
-
-.one-thing{
-    text-align:center;
-}
-
-.one-thing-card{
-    max-width:750px;
-
-    margin:auto;
-
-    padding:70px 35px;
-
-    border:
-        1px solid
-        rgba(232,196,123,.2);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(112,13,45,.12),
-            rgba(255,255,255,.02)
-        );
-}
-
-.one-thing-card .heart{
-    font-size:50px;
-
-    margin-bottom:20px;
-}
-
-.one-thing-card p{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:30px;
-
-    line-height:1.45;
-
-    color:#eee0e1;
-}
-
-
-/* =====================================================
-   FAVORITE PERSON
-===================================================== */
-
-.favorite{
-    text-align:center;
-}
-
-.favorite h2{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:
-        clamp(
-            55px,
-            9vw,
-            100px
-        );
-
-    font-weight:400;
-
-    line-height:.95;
-}
-
-.favorite h2 span{
-    color:var(--pink);
-
-    font-style:italic;
-}
-
-.favorite p{
-    max-width:650px;
-
-    margin:30px auto;
-
-    color:#bcaab0;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:22px;
-
-    line-height:1.6;
-}
-
-
-/* =====================================================
-   BIRTHDAY WISH
-===================================================== */
-
-.wish-box{
-    text-align:center;
-
-    max-width:850px;
-
-    margin:auto;
-}
-
-.wish-box h2{
-    font-family:'Playfair Display',serif;
-
-    font-size:
-        clamp(
-            35px,
-            6vw,
-            65px
-        );
-
-    font-weight:500;
-
-    margin-bottom:25px;
-}
-
-.wish-box p{
-    color:#c6b5b9;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:23px;
-
-    line-height:1.7;
-}
-
-
-/* =====================================================
-   LOVE BUTTON
-===================================================== */
-
-.love-button-area{
-    text-align:center;
-}
-
-.love-button{
-    border:
-        1px solid
-        rgba(232,196,123,.6);
-
-    background:
-        linear-gradient(
-            135deg,
-            #570c28,
-            #9d204c
-        );
-
-    color:white;
-
-    border-radius:100px;
-
-    padding:18px 35px;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    box-shadow:
-        0 15px 40px
-        rgba(100,10,50,.25);
-
-    transition:.3s;
-}
-
-.love-button:hover{
-    transform:translateY(-4px);
-}
-
-.love-message{
-    min-height:40px;
-
-    margin-top:25px;
-
-    font-family:'Cormorant Garamond',serif;
-
-    color:var(--gold);
-
-    font-size:25px;
-
-    transition:.3s;
-}
-
-
-/* =====================================================
-   FINAL SURPRISE
-===================================================== */
-
-.final-surprise{
-    text-align:center;
-}
-
-.final-card{
-    max-width:600px;
-
-    margin:auto;
-
-    padding:60px 30px;
-
-    border:
-        1px solid
-        rgba(232,196,123,.3);
-
-    background:
-        linear-gradient(
-            145deg,
-            #200710,
-            #0d0307
-        );
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.final-card .envelope{
-    font-size:55px;
-
-    margin-bottom:20px;
-}
-
-.final-card h2{
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:48px;
-
-    font-weight:500;
-}
-
-.final-card p{
-    color:#bdaab0;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:21px;
-
-    margin:20px auto 30px;
-
-    max-width:450px;
-
-    line-height:1.5;
-}
-
-.final-open{
-    padding:13px 25px;
-
-    border-radius:50px;
-
-    background:transparent;
-
-    border:1px solid var(--gold);
-
-    color:var(--gold);
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.final-open:hover{
-    background:var(--gold);
-
-    color:#18050c;
-}
-
-.final-message{
-    display:none;
-
-    animation:fadeUp 1s ease;
-}
-
-.final-message.show{
-    display:block;
-}
-
-.final-message h3{
-    font-family:'Cormorant Garamond',serif;
-
-    color:#fff;
-
-    font-size:42px;
-
-    margin-bottom:20px;
-}
-
-.final-message p{
-    color:#e0c9cf;
-}
-
-.final-message .forever{
-    color:var(--gold)!important;
-
-    font-size:27px!important;
-}
-
-
-/* =====================================================
-   MUSIC PLAYER
-===================================================== */
-
-.music-player{
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    z-index:5000;
-}
-
-.music-button{
-    width:50px;
-    height:50px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(232,196,123,.45);
-
-    background:
-        rgba(25,5,14,.88);
-
-    color:var(--gold);
-
-    cursor:pointer;
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.3);
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-    padding:60px 20px 80px;
-
-    text-align:center;
-
-    color:#75636a;
-
-    font-size:11px;
-
-    letter-spacing:1px;
-}
-
-footer span{
-    color:var(--rose);
-}
-
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-.reveal{
-    opacity:0;
-
-    transform:translateY(40px);
-
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
-}
-
-.reveal.show{
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-
-/* =====================================================
-   ANIMATION
-===================================================== */
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-
-        transform:
-            translateY(25px);
-    }
-
-    to{
-        opacity:1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:800px){
-
-    .reasons{
-        grid-template-columns:1fr;
-    }
-
-    .letter-wrap{
-        padding:35px 25px;
-    }
-
-    .letter{
-        font-size:21px;
-    }
-
-    section{
-        padding:90px 18px;
-    }
-
-}
-
-
-@media(max-width:480px){
-
-    .card-stage{
-        height:500px;
-    }
-
-    .card-content h1{
-        font-size:55px;
-    }
-
-    .card-open-text{
-        font-size:17px;
-    }
-
-    .hero h1{
-        font-size:70px;
-    }
-
-    .hero-sub{
-        font-size:20px;
-    }
-
-    .one-thing-card p{
-        font-size:25px;
-    }
-
-}
-
-</style>
-</head>
-
-
-<body class="no-scroll">
-
-
-<!-- =====================================================
-     STARS
-===================================================== -->
-
-<div class="stars" id="stars"></div>
-
-
-<!-- =====================================================
-     BIRTHDAY CARD
-===================================================== -->
-
-<div class="card-screen" id="cardScreen">
-
-    <div class="card-stage">
-
-        <div class="birthday-card" id="birthdayCard">
-
-            <!-- FRONT COVER -->
-
-            <div class="card-front">
-
-                <div class="card-content">
-
-                    <div class="small-label">
-                        A little surprise
-                    </div>
-
-                    <div class="card-heart">
-                        ❤️
-                    </div>
-
-                    <h1>
-                        FOR<br>
-                        MY LOVE
-                    </h1>
-
-                    <div class="card-date">
-                        10 • 08
-                    </div>
-
-                    <div class="card-open-text">
-                        Open Me...
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- INSIDE CARD -->
-
-            <div class="card-inside">
-
-                <div class="card-inside-content">
-
-                    <div style="
-                        font-size:38px;
-                        margin-bottom:15px;
-                    ">
-                        ✨
-                    </div>
-
-                    <div class="small-label">
-                        To My Beautiful Girl
-                    </div>
-
-                    <h2>
-                        Happy Birthday
-                    </h2>
-
-                    <div class="princess">
-                        My Princess 👑
-                    </div>
-
-                    <p>
-                        Today isn't just another day...
-                        <br>
-                        it's the day the world became
-                        a little more beautiful.
-                    </p>
-
-                    <div class="date">
-                        10 • 08
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <button
-            class="open-button"
-            id="openCard"
-        >
-            Open Your Birthday Card ❤️
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     MAIN WEBSITE
-===================================================== -->
-
-<div class="main-site" id="mainSite">
-
-
-    <!-- HERO -->
-
-    <header class="hero">
-
-        <div class="hero-glow"></div>
-
-        <div class="hero-content">
-
-            <div class="eyebrow">
-                A little corner of the universe made for you
-            </div>
-
-            <h1>
-                My Love
-
-                <span>
-                    Happy Birthday, Beautiful
-                </span>
-            </h1>
-
-            <div class="hero-date">
-                10 • 08
-            </div>
-
-            <p class="hero-sub">
-                If I could give you one thing today,
-                I would give you the ability to see yourself
-                through my eyes.
-                Then you'd finally understand
-                how incredibly special you are to me.
-            </p>
-
-        </div>
-
-        <div class="scroll-down">
-            Scroll slowly
-        </div>
-
-    </header>
-
-
-
-    <!-- =================================================
-         LOVE LETTER
-    ================================================= -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="mini">
-                    From my heart
-                </div>
-
-                <h2>
-                    A Letter For You
-                </h2>
-
-            </div>
-
-
-            <div class="letter-wrap reveal">
-
-                <div class="letter">
-
-                    My Love,
-
-                    <br><br>
-
-                    ඔයා මගේ ජීවිතයට ආවට පස්සේ,
-                    ජීවිතේ තිබ්බ සමහර සාමාන්‍ය දවස් පවා
-                    special වෙන්න පටන් ගත්තා.
-
-                    <br><br>
-
-                    Sometimes I wonder how one person
-                    can become such a beautiful part
-                    of another person's life.
-
-                    And then I think about you.
-
-                    <br><br>
-
-                    ඔයාගේ හිනාව,
-                    ඔයාගේ කතා,
-                    ඔයා කරන පොඩි පොඩි දේවල්...
-                    ඒ හැමදේම මට වටිනවා.
-
-                    <br><br>
-
-                    මට perfect relationship එකක් ඕනෙ නෑ.
-                    මට ඕනෙ අපි දෙන්නා එකට
-                    තවත් ලස්සන memories හදාගන්න එක.
-
-                    <br><br>
-
-                    No matter where life takes us,
-                    I hope I will always have a place
-                    beside you.
-
-                    <br><br>
-
-                    Happy Birthday,
-                    My Beautiful Girl. ❤️
-
-                    <div class="signature">
-                        — With all my love ❤️
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         REASONS
-    ================================================= -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="mini">
-                    Just because
-                </div>
-
-                <h2>
-                    Reasons I Love You
-                </h2>
-
-                <p>
-                    I could write a thousand reasons...
-                    but these are some of my favorites.
-                </p>
-
-            </div>
-
-
-            <div class="reasons">
-
-                <div class="reason reveal">
-
-                    <div class="reason-number">
-                        01
-                    </div>
-
-                    <h3>
-                        Your Smile
-                    </h3>
-
-                    <p>
-                        There is something about your smile
-                        that can make even an ordinary day
-                        feel beautiful.
-                    </p>
-
-                </div>
-
-
-                <div class="reason reveal">
-
-                    <div class="reason-number">
-                        02
-                    </div>
-
-                    <h3>
-                        The Way You Are
-                    </h3>
-
-                    <p>
-                        I don't love you because you're perfect.
-                        I love you because you're you.
-                    </p>
-
-                </div>
-
-
-                <div class="reason reveal">
-
-                    <div class="reason-number">
-                        03
-                    </div>
-
-                    <h3>
-                        Your Heart
-                    </h3>
-
-                    <p>
-                        The kindness and warmth inside you
-                        is one of the most beautiful things
-                        I know.
-                    </p>
-
-                </div>
-
-
-                <div class="reason reveal">
-
-                    <div class="reason-number">
-                        04
-                    </div>
-
-                    <h3>
-                        Our Little Moments
-                    </h3>
-
-                    <p>
-                        The little conversations,
-                        silly moments and memories
-                        mean more to me than you know.
-                    </p>
-
-                </div>
-
-
-                <div class="reason reveal">
-
-                    <div class="reason-number">
-                        05
-                    </div>
-
-                    <h3>
-                        You Make Me Happy
-                    </h3>
-
-                    <p>
-                        Somehow just knowing you're there
-                        makes life feel a little lighter.
-                    </p>
-
-                </div>
-
-
-                <div class="reason reveal">
-
-                    <div class="reason-number">
-                        06
-                    </div>
-
-                    <h3>
-                        You're My Person
-                    </h3>
-
-                    <p>
-                        Out of everyone in this world,
-                        you're the person I would choose
-                        again and again.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         BIG QUOTE
-    ================================================= -->
-
-    <section class="big-quote">
-
-        <div class="container reveal">
-
-            <p>
-                Out of all the people in this world...
-                <br>
-                <span>
-                    I would still choose you.
-                </span>
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         OUR STORY
-    ================================================= -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="mini">
-                    Our journey
-                </div>
-
-                <h2>
-                    Our Story
-                </h2>
-
-                <p>
-                    Every beautiful story is made
-                    from little moments.
-                </p>
-
-            </div>
-
-
-            <div class="timeline">
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-date">
-                        THE BEGINNING
-                    </div>
-
-                    <h3>
-                        When We First Met
-                    </h3>
-
-                    <p>
-                        Add your own special memory here.
-                        Write about the day you first met
-                        or the first moment you realized
-                        she was special.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-date">
-                        A SPECIAL MEMORY
-                    </div>
-
-                    <h3>
-                        One Of My Favorite Days
-                    </h3>
-
-                    <p>
-                        Add one of your favorite memories
-                        together here.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-date">
-                        TODAY
-                    </div>
-
-                    <h3>
-                        Your Birthday
-                    </h3>
-
-                    <p>
-                        Today I get to celebrate
-                        the beautiful person you are.
-                    </p>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-date">
-                        THE FUTURE
-                    </div>
-
-                    <h3>
-                        More Memories To Come
-                    </h3>
-
-                    <p>
-                        This isn't the end of our story.
-                        There are still so many beautiful
-                        chapters waiting for us.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         ONE THING
-    ================================================= -->
-
-    <section class="one-thing">
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="mini">
-                    If I could
-                </div>
-
-                <h2>
-                    Give You One Thing
-                </h2>
-
-            </div>
-
-
-            <div class="one-thing-card reveal">
-
-                <div class="heart">
-                    ❤️
-                </div>
-
-                <p>
-                    I would give you the ability
-                    to see yourself through my eyes...
-
-                    <br><br>
-
-                    Because then you would understand
-                    just how beautiful,
-                    precious,
-                    and loved you truly are.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         FAVORITE PERSON
-    ================================================= -->
-
-    <section class="favorite">
-
-        <div class="container reveal">
-
-            <div class="eyebrow">
-                My favorite person
-            </div>
-
-            <h2>
-                You are not just<br>
-                <span>
-                    someone I love.
-                </span>
-            </h2>
-
-            <p>
-                You're the person I want to tell my
-                random stories to.
-
-                The person I want to share good news with.
-
-                The person I want beside me when
-                life gets difficult.
-
-                <br><br>
-
-                You're my favorite person.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         BIRTHDAY WISH
-    ================================================= -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="wish-box reveal">
-
-                <div class="section-heading">
-
-                    <div class="mini">
-                        Your special day
-                    </div>
-
-                    <h2>
-                        My Birthday Wish For You
-                    </h2>
-
-                </div>
-
-                <p>
-
-                    I hope this new year of your life
-                    brings you everything your heart
-                    quietly wishes for.
-
-                    <br><br>
-
-                    I hope you smile more.
-                    Dream bigger.
-                    Love harder.
-                    And never forget how special you are.
-
-                    <br><br>
-
-                    May every beautiful thing
-                    you deserve find its way to you.
-
-                    <br><br>
-
-                    And hopefully...
-                    I'll be there for many of those moments. ❤️
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         LOVE BUTTON
-    ================================================= -->
-
-    <section class="love-button-area">
-
-        <div class="container reveal">
-
-            <div class="section-heading">
-
-                <div class="mini">
-                    One little thing
-                </div>
-
-                <h2>
-                    Tap This ❤️
-                </h2>
-
-            </div>
-
-
-            <button
-                class="love-button"
-                id="loveButton"
-            >
-                Press My Heart ❤️
-            </button>
-
-
-            <div
-                class="love-message"
-                id="loveMessage"
-            ></div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         FINAL SURPRISE
-    ================================================= -->
-
-    <section class="final-surprise">
-
-        <div class="container">
-
-            <div class="section-heading reveal">
-
-                <div class="mini">
-                    Before you go
-                </div>
-
-                <h2>
-                    One Last Thing...
-                </h2>
-
-            </div>
-
-
-            <div class="final-card reveal">
-
-                <div class="envelope">
-                    💌
-                </div>
-
-
-                <div id="finalPreview">
-
-                    <h2>
-                        A Little Message
-                    </h2>
-
-                    <p>
-                        There's one more thing
-                        I want you to know.
-                    </p>
-
-                    <button
-                        class="final-open"
-                        id="finalOpen"
-                    >
-                        Open It ❤️
-                    </button>
-
-                </div>
-
-
-                <div
-                    class="final-message"
-                    id="finalMessage"
-                >
-
-                    <h3>
-                        My Love ❤️
-                    </h3>
-
-                    <p>
-
-                        Before you leave this little corner
-                        of the internet...
-
-                        <br><br>
-
-                        remember that somewhere in this world,
-                        there is someone who thinks you're
-                        incredibly special.
-
-                        <br><br>
-
-                        Someone who smiles because of you.
-
-                        <br><br>
-
-                        Someone who is grateful
-                        that you exist.
-
-                    </p>
-
-
-                    <p class="forever">
-
-                        I love you.
-                        <br>
-                        Today.
-                        Tomorrow.
-                        Always.
-                        ❤️
-
-                    </p>
-
-
-                    <p>
-                        Happy Birthday,
-                        My Princess 👑
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        Made with love ❤️
-        <br><br>
-
-        For my favorite person in the world.
-
-    </footer>
-
-</div>
-
-
-
-<!-- =====================================================
-     MUSIC
-===================================================== -->
-
-<audio
-    id="music"
-    loop
-    preload="auto"
->
-    <source
-        src="song.mp3"
-        type="audio/mpeg"
-    >
-</audio>
-
-
-<!-- MUSIC BUTTON -->
-
-<div class="music-player">
-
-    <button
-        class="music-button"
-        id="musicButton"
-    >
-        ♫
-    </button>
-
-</div>
-
-
-
-<script>
-
-/* =====================================================
-   CREATE STARS
-===================================================== */
-
-const stars =
-    document.getElementById("stars");
-
-for(let i = 0; i < 90; i++){
-
-    const star =
-        document.createElement("div");
-
-    star.className = "star";
-
-    star.style.left =
-        Math.random() * 100 + "%";
-
-    star.style.top =
-        Math.random() * 100 + "%";
-
-    star.style.animationDelay =
-        Math.random() * 3 + "s";
-
-    star.style.animationDuration =
-        (2 + Math.random() * 4) + "s";
-
-    stars.appendChild(star);
-}
-
-
-/* =====================================================
-   ELEMENTS
-===================================================== */
-
-const cardScreen =
-    document.getElementById("cardScreen");
-
-const birthdayCard =
-    document.getElementById("birthdayCard");
-
-const openCard =
-    document.getElementById("openCard");
-
-const mainSite =
-    document.getElementById("mainSite");
-
-const music =
-    document.getElementById("music");
-
-const musicButton =
-    document.getElementById("musicButton");
-
-let musicPlaying = false;
-
-
-/* =====================================================
-   OPEN BIRTHDAY CARD
-   + PLAY MP3 IMMEDIATELY
-===================================================== */
-
-openCard.addEventListener("click", function(){
-
-    /*
-       IMPORTANT:
-       This click is a real user interaction,
-       so the browser allows the MP3 to start here.
-    */
-
-    music.volume = 0.45;
-
-    music.currentTime = 0;
-
-    music.play()
-    .then(function(){
-
-        musicPlaying = true;
-
-        musicButton.textContent = "❚❚";
-
-    })
-    .catch(function(error){
-
-        console.log(
-            "Music could not start:",
-            error
-        );
-
-    });
-
-
-    /* Open 3D card */
-
-    birthdayCard.classList.add("opened");
-
-
-    /* Romantic particle explosion */
-
-    createHeartExplosion();
-
-
-    /*
-       Wait until card opening animation
-       is mostly complete.
-    */
-
-    setTimeout(function(){
-
-        cardScreen.classList.add("hidden");
-
-        document.body.classList.remove(
-            "no-scroll"
-        );
-
-        mainSite.classList.add("visible");
-
-        window.scrollTo({
-            top:0,
-            behavior:"instant"
-        });
-
-    },2200);
-
-});
-
-
-/* =====================================================
-   HEART EXPLOSION
-===================================================== */
-
-function createHeartExplosion(){
-
-    const symbols = [
-        "❤️",
-        "💗",
-        "💕",
-        "✨",
-        "♡",
-        "✦"
-    ];
-
-    for(let i=0;i<35;i++){
-
-        const particle =
-            document.createElement("div");
-
-        particle.className =
-            "particle";
-
-        particle.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
-
-        particle.style.left =
-            "50%";
-
-        particle.style.top =
-            "50%";
-
-        particle.style.fontSize =
-            (10 + Math.random()*20) +
-            "px";
-
-        particle.style.setProperty(
-            "--x",
-            ((Math.random()-.5)*700) +
-            "px"
-        );
-
-        particle.style.setProperty(
-            "--y",
-            ((Math.random()-.5)*700) +
-            "px"
-        );
-
-        document.body.appendChild(
-            particle
-        );
-
-        setTimeout(function(){
-
-            particle.remove();
-
-        },2000);
-
-    }
-
-}
-
-
-/* =====================================================
-   MUSIC BUTTON
-===================================================== */
-
-musicButton.addEventListener(
-    "click",
-    function(){
-
-        if(musicPlaying){
-
-            music.pause();
-
-            musicPlaying = false;
-
-            musicButton.textContent = "♫";
-
-        }else{
-
-            music.play()
-            .then(function(){
-
-                musicPlaying = true;
-
-                musicButton.textContent =
-                    "❚❚";
-
-            })
-            .catch(function(){
-
-                console.log(
-                    "Music playback blocked."
-                );
-
-            });
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-const observer =
-    new IntersectionObserver(
-        function(entries){
-
-            entries.forEach(
-                function(entry){
-
-                    if(entry.isIntersecting){
-
-                        entry.target.classList.add(
-                            "show"
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold:.12
-        }
-    );
-
-
-document
-    .querySelectorAll(".reveal")
-    .forEach(function(element){
-
-        observer.observe(element);
-
-    });
-
-
-/* =====================================================
-   LOVE BUTTON
-===================================================== */
-
-const loveButton =
-    document.getElementById(
-        "loveButton"
-    );
-
-const loveMessage =
-    document.getElementById(
-        "loveMessage"
-    );
-
-
-const loveMessages = [
-
-    "I love you more than words can explain. ❤️",
-
-    "You will always have a special place in my heart. 💗",
-
-    "You are one of the best things that ever happened to me. ✨",
-
-    "My favorite place is wherever you are. ❤️",
-
-    "You make my world a little more beautiful. 🌹",
-
-    "No matter what happens, you'll always mean so much to me. 💕",
-
-    "Forever grateful for you. ❤️"
-
-];
-
-
-let messageIndex = 0;
-
-
-loveButton.addEventListener(
-    "click",
-    function(){
-
-        loveMessage.style.opacity = "0";
-
-        setTimeout(function(){
-
-            loveMessage.textContent =
-                loveMessages[
-                    messageIndex
-                ];
-
-            loveMessage.style.opacity = "1";
-
-            messageIndex++;
-
-            if(
-                messageIndex >=
-                loveMessages.length
-            ){
-
-                messageIndex = 0;
-
-            }
-
-        },250);
-
-        createSmallHearts();
-
-    }
-);
-
-
-/* =====================================================
-   SMALL HEARTS
-===================================================== */
-
-function createSmallHearts(){
-
-    for(let i=0;i<12;i++){
-
-        const heart =
-            document.createElement("div");
-
-        heart.className =
-            "particle";
-
-        heart.textContent =
-            "❤️";
-
-        heart.style.left =
-            "50%";
-
-        heart.style.top =
-            "70%";
-
-        heart.style.setProperty(
-            "--x",
-            ((Math.random()-.5)*400) +
-            "px"
-        );
-
-        heart.style.setProperty(
-            "--y",
-            (-100 - Math.random()*300) +
-            "px"
-        );
-
-        document.body.appendChild(
-            heart
-        );
-
-        setTimeout(function(){
-
-            heart.remove();
-
-        },1800);
-
-    }
-
-}
-
-
-/* =====================================================
-   FINAL SURPRISE
-===================================================== */
-
-const finalOpen =
-    document.getElementById(
-        "finalOpen"
-    );
-
-const finalPreview =
-    document.getElementById(
-        "finalPreview"
-    );
-
-const finalMessage =
-    document.getElementById(
-        "finalMessage"
-    );
-
-
-finalOpen.addEventListener(
-    "click",
-    function(){
-
-        finalPreview.style.display =
-            "none";
-
-        finalMessage.classList.add(
-            "show"
-        );
-
-        createHeartExplosion();
-
-    }
-);
-
-
-/* =====================================================
-   EXTRA: KEEP MUSIC PLAYING
-===================================================== */
-
-music.addEventListener(
-    "play",
-    function(){
-
-        musicPlaying = true;
-
-        musicButton.textContent =
-            "❚❚";
-
-    }
-);
-
-music.addEventListener(
-    "pause",
-    function(){
-
-        musicPlaying = false;
-
-        musicButton.textContent =
-            "♫";
-
-    }
-);
-
-</script>
 
 </body>
-  </html>
+
+</html>
